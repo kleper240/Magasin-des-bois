@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculateur d'articles</title>
+</head>
+<body>
+    <h1> Veuillez renseigner vos informations. </h1>
+
+    <!-- Formulaire avec action pointant vers "process.php" et méthode "post" -->
+    <form action="process.php" method="post">
+
+        <!-- Sélection du type d'article avec une liste déroulante -->
+        <label for="type_article">Type d'article:</label>
+        <select name="type_article" id="type_article" onchange="filtre()">
+            <option value="aucune">Aucune</option>
+            <option value="article1">Article 1</option>
+            <option value="article2">Article 2</option>
+            <option value="article3">Article 3</option>
+        </select>
+
+        <!-- Sélection du type de bois avec une liste déroulante -->
+        <label for="bois">Bois:</label>
+        <select name="bois" id="bois">
+            <option value="Bois1">Bois 1 : Prix: 120 €</option>
+            <option value="Bois2">Bois 2 : Prix: 110 €</option>
+            <option value="Bois3">Bois 3 : Prix: 75 €</option>
+            <option value="Bois4">Bois 4 : Prix: 80 €</option>
+            <option value="Bois5">Bois 5 : Prix: 90 €</option>
+        </select>
+        
+        <!-- Div pour les critères de filtrage, initialement cachée -->
+        <div id="filtrage" hidden>
+            <!-- Entrées pour les dimensions du produit -->
+            <label id="critere1">Dimension 1:</label>
+            <input type="text" name="dimension1" >
+
+            <label id="critere2">Dimension 2:</label>
+            <input type="text" name="dimension2" >
+
+            <label id="critere3">Dimension 3:</label>
+            <input type="text" name="dimension3" >
+
+            <!-- Bouton de soumission du formulaire -->
+            <button type="submit">Calculer</button>
+        </div>
+    </form>
+
+    <!-- Inclusion du fichier JavaScript externe -->
+    <script src="script.js"></script>    
+</body>
+</html>
